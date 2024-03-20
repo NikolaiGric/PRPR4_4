@@ -1,0 +1,33 @@
+﻿<Window x:Class="PRPR4.EntityFrameworkWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PRPR4"
+        mc:Ignorable="d"
+        Title="EntityFrameworkWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="11*"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="SearchTxt"/>
+            <Button Grid.Column="1" Content="Поиск" FontSize="20" Click="Button_Click"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <ComboBox DisplayMemberPath="Name_Film" x:Name="AllCombobox" SelectionChanged="AllCombobox_SelectionChanged"/>
+            <Button FontSize="20" Content="Очистить" Grid.Column="1" Click="Button_Click_1"/>
+        </Grid>
+        <DataGrid x:Name="AllDataGrid" Grid.Row="2"/>
+    </Grid>
+</Window>
